@@ -1,5 +1,6 @@
 package com.nenkov.demofx;
 
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -16,23 +17,37 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 @Controller
-public class RootController implements Initializable {
+public class RootViewPresenter implements Initializable {
     private final BookJpaRepository bookJpaRepository;
-    public TableColumn<BookEntity, Timestamp> addedOnColumn;
-    public TableColumn<BookEntity, String> isbnColumn;
-    public TableColumn<BookEntity, String> titleColumn;
-    public TableColumn<BookEntity, String> idColumn;
-    public TableView<BookEntity> bookTableView;
-    public TextField entriesPerPageTextField;
-    public TextField pageNumberTextField;
-    public Button refreshButton;
-    public Button addNewButton;
-    public TextField isbnTextField;
-    public TextField titleTextField;
     private List<BookEntity> bookEntityList;
 
+    @FXML
+    private TableView<BookEntity> bookTableView;
+    @FXML
+    private TableColumn<BookEntity, String> idColumn;
+    @FXML
+    private TableColumn<BookEntity, String> titleColumn;
+    @FXML
+    private TableColumn<BookEntity, String> isbnColumn;
+    @FXML
+    private TableColumn<BookEntity, Timestamp> addedOnColumn;
+
+    @FXML
+    private TextField entriesPerPageTextField;
+    @FXML
+    private TextField pageNumberTextField;
+    @FXML
+    private Button refreshButton;
+
+    @FXML
+    private Button addNewButton;
+    @FXML
+    private TextField isbnTextField;
+    @FXML
+    private TextField titleTextField;
+
     @Autowired
-    public RootController(BookJpaRepository bookJpaRepository) {
+    public RootViewPresenter(BookJpaRepository bookJpaRepository) {
         this.bookJpaRepository = bookJpaRepository;
     }
 
