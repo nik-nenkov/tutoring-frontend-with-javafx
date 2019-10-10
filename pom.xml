@@ -67,15 +67,15 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
                 <groupId>org.apache.maven.plugins</groupId>
             </plugin>
             <plugin>
                 <artifactId>exec-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.nenkov.demofx.DemoFxApplication.class</mainClass>
+                    <mainClass>com.nenkov.demofx.DemoFxApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

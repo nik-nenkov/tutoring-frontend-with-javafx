@@ -11,58 +11,57 @@ import java.sql.Timestamp;
 
 @Entity
 public class BookEntity {
-    @Generated(GenerationTime.INSERT)
-    @Column(
-            name = "added_on",
-            nullable = false,
-            updatable = false,
-            insertable = false,
-            columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private java.sql.Timestamp addedOn;
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String title;
-    private String isbn;
+  @Generated(GenerationTime.INSERT)
+  @Column(
+      name = "added_on",
+      nullable = false,
+      updatable = false,
+      insertable = false,
+      columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+  private java.sql.Timestamp addedOn;
 
-    public BookEntity() {
-        //this is needed
-    }
+  @Id @GeneratedValue private Long id;
+  private String title;
+  private String isbn;
 
-    public BookEntity(String title, String isbn) {
-        this.isbn = isbn;
-        this.title = title;
-    }
+  public BookEntity() {
+    // this is needed
+  }
 
-    public Timestamp getAddedOn() {
-        return addedOn;
-    }
+  public BookEntity(String title, String isbn) {
+    this.isbn = isbn;
+    this.title = title;
+  }
 
-    public void setAddedOn(Timestamp addedOn) {
-        this.addedOn = addedOn;
-    }
+  public Timestamp getAddedOn() {
+    return addedOn;
+  }
 
-    public Long getId() {
-        return id;
-    }
+  public void setAddedOn(Timestamp addedOn) {
+    this.addedOn = addedOn;
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public String getTitle() {
-        return title;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+  public String getTitle() {
+    return title;
+  }
 
-    public String getIsbn() {
-        return isbn;
-    }
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
+  public String getIsbn() {
+    return isbn;
+  }
+
+  public void setIsbn(String isbn) {
+    this.isbn = isbn;
+  }
 }

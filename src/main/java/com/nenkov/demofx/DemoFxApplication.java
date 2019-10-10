@@ -11,33 +11,33 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class DemoFxApplication extends Application {
 
-    private ConfigurableApplicationContext springContext;
-    private Parent rootNode;
+  private ConfigurableApplicationContext springContext;
+  private Parent rootNode;
 
-    public static void main(String[] args) {
-        launch(DemoFxApplication.class, args);
-    }
+  public static void main(String[] args) {
+    launch(DemoFxApplication.class, args);
+  }
 
-    @Override
-    public void init() throws Exception {
-        springContext = SpringApplication.run(DemoFxApplication.class);
-        SpringFXMLLoader springFXMLLoader = new SpringFXMLLoader(springContext);
-        rootNode = (Parent) springFXMLLoader.load("root.fxml");
-    }
+  @Override
+  public void init() throws Exception {
+    springContext = SpringApplication.run(DemoFxApplication.class);
+    SpringFXMLLoader springFXMLLoader = new SpringFXMLLoader(springContext);
+    rootNode = (Parent) springFXMLLoader.load("root.fxml");
+  }
 
-    @Override
-    public void start(Stage stage) throws Exception {
-        Scene scene = new Scene(rootNode, 1366, 768);
-        stage.setScene(scene);
-        stage.setTitle("demofx");
-        stage.setResizable(false);
-        stage.sizeToScene();
-        stage.show();
-    }
+  @Override
+  public void start(Stage stage) throws Exception {
+    Scene scene = new Scene(rootNode, 1366, 768);
+    stage.setScene(scene);
+    stage.setTitle("demofx");
+    stage.setResizable(false);
+    stage.sizeToScene();
+    stage.show();
+  }
 
-    @Override
-    public void stop() {
-        springContext.close();
-        System.exit(0);
-    }
+  @Override
+  public void stop() {
+    springContext.close();
+    System.exit(0);
+  }
 }
